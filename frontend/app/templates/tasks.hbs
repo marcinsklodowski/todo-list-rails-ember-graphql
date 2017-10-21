@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-10">
+    <table>
+      {{#each model.tasks as |task|}}
+        <tr>
+          <td>
+            {{input value=task.title class='form-control'}}
+          </td>
+          <td>
+            <button {{action "saveTask" task}} class="btn btn-default">
+              Update
+            </button>
+          </td>
+          <td>
+            <button {{action "destroyTask" task}} class="btn btn-danger">
+              Destroy
+            </button>
+          </td>
+        </tr>
+      {{/each}}
+      <tr>
+        <td>
+          {{input value=title class='form-control'}}
+        </td>
+        <td>
+          <button {{action "createTask" title}} class="btn btn-default">
+            Create
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
